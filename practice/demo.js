@@ -1,10 +1,24 @@
-var figlet = require('figlet');
- 
-figlet('Hello World!!', function(err, data) {
+const figlet = require('figlet');
+
+
+figlet.text('Hello World!', {
+    font: 'Alligator',
+    horizontalLayout: 'default',
+    verticalLayout: 'default'
+}, function(err, data) {
     if (err) {
         console.log('Something went wrong...');
         console.dir(err);
         return;
     }
-    console.log(data)
+    console.log(data);
 });
+
+// figlet.fonts(function(err, fonts) {
+//     if (err) {
+//         console.log('something went wrong...');
+//         console.dir(err);
+//         return;
+//     }
+//     console.dir(fonts);
+// });
