@@ -1,0 +1,13 @@
+.Header {
+  background-color: rgb(211, 74, 97);
+  color: white;
+  padding: 10px;
+  width: 96%;
+  margin: 10px auto;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 25px;
+  font-family:Times, 'Times New Roman', serif;
+  
+}
