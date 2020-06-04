@@ -3,21 +3,26 @@
   background-color: rgb(17, 52, 165);
   width: 90%;
   margin: 0 auto;
+  margin-bottom: 15px;
   color: white;
   box-shadow: 7px 7px 2px black;
   border-radius: 10px;
+  display: flex;
 }
-.Post__list_title {
+.Post__list_text--title {
   text-align: left;
   padding: 5px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.Post__list_description {
+.Post__list_text--description {
   text-align: left;
   padding: 5px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.Post__list_image{
+  padding-left: 100px;
+}
 .Post__list:hover {
   background-color: rgb(47, 143, 167);
   cursor: pointer;
