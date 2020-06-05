@@ -1,0 +1,23 @@
+.GridUser__card {
+  width: 30%;
+  border: solid 2px lightgrey;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.GridUser__card_img img {
+  width: 100%;
+}
+.GridUser__card_info--name {
+  position: absolute;
+  top: 300px;
+  color: white;
+  font-size: 30px;
+}
+.GridUser__card_info {
+  padding-left: 5px;
+}
+.GridUser__card:hover {
+  background-color: rgb(228, 163, 174);
+  cursor: pointer;
+}
