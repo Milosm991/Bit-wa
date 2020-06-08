@@ -1,0 +1,22 @@
+.SingleShow {
+  width: 30%;
+  margin-right: 15px;
+  border: solid 1px grey;
+  margin-bottom: 10px;
+}
+.SingleShow img {
+  width: 100%;
+}
+
+.SingleShow h3 {
+  text-align: center;
+}
+
+.SingleShow:hover {
+  background-color: rgb(194, 170, 139);
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
