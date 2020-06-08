@@ -4,7 +4,7 @@ import "./Footer.css"
 const Footer = () => {
     return (
         <div className='Footer'>
-            <h5 className='Footer__title'>CopyRight &copy; 2020 BIT</h5>
+            <h4 className='Footer__title'>CopyRight &copy; 2020 BIT</h4>
         </div>
     )
 }

@@ -26,14 +26,15 @@ class DataFetch extends React.Component {
                 {console.log(this.state.shows)}
                 < h2 > Popular Shows</h2>
                 <div className='DataFetch'>
-                    {this.state.shows.map((show, i) => {
+                    {this.state.shows.sort((a, b) => a.rating.average > b.rating.average ? -1 : 1).map((show, i) => {
                         if (i < 50) {
                             return (
                                 <SingleShow
                                     key={i}
                                     src={show.image.medium}
                                     name={show.name}
-                                    link={show.url} />
+                                    link={show.url}
+                                    avgRate={show.rating.average} />
                             )
                         }
                     }

@@ -3,6 +3,7 @@
   margin-right: 15px;
   border: solid 1px grey;
   margin-bottom: 10px;
+  /* position: relative; */
 }
 .SingleShow img {
   width: 100%;
@@ -19,4 +20,11 @@
 a {
   text-decoration: none;
   color: black;
+}
+
+
+.SingleShow__rate {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 20px;
 }

@@ -8,7 +8,7 @@ import { AiOutlineComment } from 'react-icons/ai'
 
 
 class SinglePost extends React.Component {
-    constructor(props) {
+    constructor({props}) {
         super(props)
 
         this.state = {
