@@ -1,0 +1,9 @@
+.GridUser{
+    width: 30%;
+    margin: 0 auto; 
+    margin-right: 20px;
+}
+
+.GridUser__img img{
+    width: 100%;
+}
