@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: pink;
+  background-color: rgb(250, 179, 169);
   position: relative;
   margin-bottom: 20px;
 }
@@ -16,17 +16,16 @@
   position: relative;
   display: flex;
   color: white;
-  position: absolute;
   top: 30px;
   right: 50px;
 }
 
 .Header__icons_rel {
-  margin-right: 20px;
+  position: absolute;
+  right: 50px;
 }
 
 .Header__icons_grid {
-  display: block;
   position: absolute;
   right: 2px;
 }
@@ -34,9 +33,16 @@
 .Header__icons_list {
   position: absolute;
   right: 2px;
-  display: block;
+  }
+
+.grid:hover {
+  cursor: pointer;
 }
 
-/* .active{
-  display: block;
-} */
+.Header__icons_list:hover {
+  cursor: pointer;
+}
+
+.Header__icons_rel:hover{
+  cursor: pointer;
+}

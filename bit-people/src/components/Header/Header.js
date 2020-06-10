@@ -13,8 +13,8 @@ const Header = ({ changeView, isListView, refreshUsers }) => {
             <div className='Header__icons'>
                 <span className='Header__icons_rel' onClick={refreshUsers}><FaRedo /></span>
                 {isListView ?
-                    <span onClick={changeView} className='Header__icons_list'><FaMicrosoft /></span>
-                    : <span onClick={changeView} className='Header__icons_gird'><FaBars /></span>
+                    <span onClick={changeView} className='Header__icons_gird grid'><FaMicrosoft /></span>
+                    : <span onClick={changeView} className='Header__icons_list'><FaBars /></span>
                 }
             </div>
         </header>

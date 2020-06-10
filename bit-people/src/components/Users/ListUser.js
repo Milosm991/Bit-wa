@@ -11,18 +11,13 @@ const ListUser = ({ img, lastName, firstName, dateOfBirth, email, gender }) => {
     const month = dob.getMonth()
     const year = dob.getFullYear()
 
-    // const female = (gender) => {        
-    //     return gender === 'female' && 'female'
-    // }
-
-
     return (
         <div className={`ListUser ${gender === 'female' && 'female'}`}>
             <div className="ListUser__img">
                 <img src={img} alt="avatar" ></img>
             </div>
             <div className="ListUser__info">
-                <p>{firstName} {lastName}</p>
+                <p><b>{firstName} {lastName}</b></p>
                 <p><MdEmail /> Email: {hideEmail(email)}</p>
                 <p><FaBirthdayCake />{day}.{month + 1}.{year}</p>
             </div>

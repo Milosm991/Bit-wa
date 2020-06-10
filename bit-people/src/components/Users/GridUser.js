@@ -1,6 +1,7 @@
 import React from "react";
 import "./GridUser.css";
 import {hideEmail} from '../../functions.js'
+import PropTypes from 'prop-types'
 
 const GridUser = ({ img, firstName, email, dateOfBirth, gender }) =>{ 
     const dob = new Date(dateOfBirth)
@@ -13,12 +14,20 @@ return (
         <div className="GridUser__img">
             <img src={img} alt="avatar"></img>
         </div>
-        <p>{firstName}</p>
-        <p>{hideEmail(email)}</p>
-        <p>{day}.{month + 1}.{year}</p>
+        <p className='GridUser__name'>{firstName}</p>
+        <p>Email: <i>{hideEmail(email)}</i></p>
+        <p>Date of birth: {day}.{month + 1}.{year}</p>
     </div>
 )
 }
 
 
 export { GridUser };
+
+GridUser.propTypes = {
+    img: PropTypes.string,
+    lastName: PropTypes.string,
+    firstName: PropTypes.string,
+    email: PropTypes.string,
+    dateOfBirth: PropTypes.string,
+}
