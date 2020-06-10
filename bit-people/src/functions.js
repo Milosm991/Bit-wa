@@ -6,14 +6,7 @@ export const hideEmail = (email) => {
 
 }
 
-// export const changeIcon = () => {
-//     const list = document.querySelector('.Header__icons_list')
-//     const grid = document.querySelector('.Header__icons_grid')
-
-//     return (
-//         grid.addEventListener('click', () => {
-//             grid.display.style = 'none'
-//             list.display.style = 'block'
-//         })
-//     )
-
+export const fetchUsers = () => {
+    return fetch("https://randomuser.me/api/?results=15")
+        .then(resolve => resolve.json())
+}

@@ -8,12 +8,8 @@ const GridUser = ({ img, firstName, email, dateOfBirth, gender }) =>{
     const month = dob.getMonth()
     const year = dob.getFullYear()
 
-    const female = (gender) => {        
-        return gender === 'female' && 'female'
-    }
-    
 return (
-    <div className={"GridUser " + female(gender)}>
+    <div className={`GridUser ${gender === 'female' && 'female'}`}>
         <div className="GridUser__img">
             <img src={img} alt="avatar"></img>
         </div>
