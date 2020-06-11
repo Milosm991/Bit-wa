@@ -1,14 +1,32 @@
 import React from 'react'
-import "./Main.css"
+import "./Main.scss"
+import SingleCard from '../SingleCard/SingleCard'
+import PropTypes from 'prop-types'
 
-const Main = (props) => {
-    return (
-        <div className="Main">
-            <div className="Main__image">
-                {props.results.map((gif, i) => <img key={i} src={gif.images.downsized.url} alt='gif'></img>)}
+class Main extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
+
+    render() {
+        return (
+            <div className="Main">
+                {this.props.results.map((gif, i) =>
+                    <SingleCard
+                        key={i}
+                        src={gif.images.downsized.url}
+                        id={gif.id}
+                        removeItem={this.props.removeGif} />)}
+
             </div>
-
-        </div>
-    )
+        )
+    }
 }
+
 export default Main
+
+
+Main.propTypes = {
+    removeGif: PropTypes.func.isRequired
+}
