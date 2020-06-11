@@ -1,0 +1,36 @@
+.InputFields{
+    padding: 20px;
+
+        .InputFields__user{
+            margin-bottom: 10px;
+            padding: 4px;
+        }
+
+        .InputFields__pass {
+            margin-bottom: 10px;
+            padding: 4px;
+        }
+
+        .InputFields__btnL{
+            margin-bottom: 10px;
+            background-color: #053c5e;
+            padding: 8px;
+            color: white;
+            font-weight: 650;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .InputFields__btnR {
+            padding: 4px;
+            background-color: #db222a;
+            color: white;
+            font-weight: 650;
+            border: none;
+            border-radius: 5px;
+        }
+}
+
+.InputFields__btnL:hover, .InputFields__btnR:hover {
+    cursor: pointer;
+}
