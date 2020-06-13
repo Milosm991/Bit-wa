@@ -1,4 +1,22 @@
+body{
+  background-color: rgb(245, 245, 245);
+}
+#root{
+  position: relative;
+  
+}
+
 .AppMain {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .RelatedVideosMain {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    position: absolute;
+    top: 170px;
+    right: 20px;
+
   }
