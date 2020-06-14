@@ -15,22 +15,27 @@ class App extends React.Component {
     this.state = {
       videos: [],
       relatedVideos: [],
+      previousPlayed: [],
       idVideo: ''
     }
   }
-
   onSearch = (value) => {
-    fetchVideos(value)
-      .then(data => {
-        console.log(data);
-
-        this.setState({ videos: data.items })
-      })
+    setTimeout( () => {
+      fetchVideos(value)
+        .then(data => {
+          console.log(data);
+  
+          this.setState({ videos: data.items })
+        })
+    }, 2000)
   }
+  
 
   getId = (id) => {
+    sessionStorage.setItem('prevPlayed', JSON.stringify(id))
     this.setState({
       idVideo: id,
+      previousPlayed: JSON.parse(sessionStorage.getItem('prevPlayed')),
       videos: []
     }, () => {
       fetchRelatedVideos(this.state.idVideo)
@@ -45,8 +50,10 @@ class App extends React.Component {
   }
 
   relatedVideoId =(id) => {
-    this.setState({ idVideo: id })
+    sessionStorage.setItem('prevPlayed', JSON.stringify(id))
+    this.setState({ idVideo: id,  previousPlayed: JSON.parse(sessionStorage.getItem('prevPlayed'))})
   }
+
   
   render() {
     return (
@@ -59,9 +66,10 @@ class App extends React.Component {
             <MainSection
               key={i}
               id={item.id.videoId}
-              img={item.snippet.thumbnails.default.url}
+              img={item.snippet.thumbnails.high.url}
               name={item.snippet.title}
-              func={this.getId}
+              getId={this.getId}
+              setData={this.setData}
             />
           )}
         </div>
@@ -69,8 +77,11 @@ class App extends React.Component {
           {this.state.relatedVideos.map((item, i) =>
             <RelatedVideos
               key={i}
+              img={item.snippet.thumbnails.medium.url}
+              name={item.snippet.title}
               id={item.id.videoId}
               relatedVideoId={this.relatedVideoId}
+              setData={this.setData}
             />)
           }
         </div>

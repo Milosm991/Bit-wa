@@ -14,7 +14,7 @@ class Search extends React.Component {
         this.props.searchVideos(e.target.value)
     }
     render() {
-        return (
+        return (   
             <input className="Search" onKeyUp={this.search} type="search" placeholder='Search'></input>
         )
     }

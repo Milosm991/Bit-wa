@@ -8,6 +8,6 @@ export const fetchVideos = (inputValue) => {
 export const fetchRelatedVideos = (id) => {
     const key = 'AIzaSyBDuTLHqG4n0nkLc7lHYdLG39AXLcISBQo'
 
-    return fetch(`https://www.googleapis.com/youtube/v3/search?maxResults=10&relatedToVideoId=${id}&type=video&key=${key}`)
+    return fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&relatedToVideoId=${id}&type=video&key=${key}`)
         .then(resolve => resolve.json())
 }
