@@ -10,9 +10,10 @@ class Authors extends React.Component {
         return(
             <div>
                 <Header />
-                <h2>Authors</h2>
+                <div>
+                    <h2>Authors</h2>
+                </div>
             </div>
-            
         )
     }
 }

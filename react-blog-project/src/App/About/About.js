@@ -10,9 +10,10 @@ class About extends React.Component {
         return(
             <div>
                 <Header />
-                <h2>About</h2>
+                <div>
+                    <h2>About</h2>
+                </div>
             </div>
-            
         )
     }
 }

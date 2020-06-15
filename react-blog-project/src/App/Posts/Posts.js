@@ -10,7 +10,9 @@ class Posts extends React.Component {
         return(
             <div>
                 <Header />
-                <h2>Posts</h2>
+                <div>
+                    <h2>Posts</h2>
+                </div>
             </div>
             
         )
