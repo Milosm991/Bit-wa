@@ -6,6 +6,7 @@ import Search from './components/Search/Search.js';
 import MainSection from './components/MainSection/MainSection.js';
 import RelatedVideos from './components/RelatedVideos/RelatedVideos.js'
 import Header from './components/Header/Header.js'
+import PreviousPlayedVideos from './components/PreviousPlayedVideos/PreviousPlayedVideos.js'
 import "./App.scss"
 
 class App extends React.Component {
@@ -16,26 +17,27 @@ class App extends React.Component {
       videos: [],
       relatedVideos: [],
       previousPlayed: [],
+      history: [],
       idVideo: ''
     }
+
   }
   onSearch = (value) => {
-    setTimeout( () => {
+    setTimeout(() => {
       fetchVideos(value)
         .then(data => {
           console.log(data);
-  
+
           this.setState({ videos: data.items })
         })
     }, 2000)
   }
-  
+
 
   getId = (id) => {
-    sessionStorage.setItem('prevPlayed', JSON.stringify(id))
     this.setState({
       idVideo: id,
-      previousPlayed: JSON.parse(sessionStorage.getItem('prevPlayed')),
+      previousPlayed: [id],
       videos: []
     }, () => {
       fetchRelatedVideos(this.state.idVideo)
@@ -49,12 +51,29 @@ class App extends React.Component {
     })
   }
 
-  relatedVideoId =(id) => {
-    sessionStorage.setItem('prevPlayed', JSON.stringify(id))
-    this.setState({ idVideo: id,  previousPlayed: JSON.parse(sessionStorage.getItem('prevPlayed'))})
+  relatedVideoId = (id) => {
+    sessionStorage.setItem('prevPlayed', JSON.stringify([...this.state.previousPlayed, id]))
+    this.setState({ idVideo: id, previousPlayed: JSON.parse(sessionStorage.getItem('prevPlayed')) })
   }
 
-  
+  playedVideos = (id) => {
+    const filterdVideos = this.state.videos.filter(item => {
+      if (item.id.videoId === id) {
+        return true
+      }
+    })
+    this.setState({ history: filterdVideos })
+  }
+
+  playedVideoss = (id) => {
+    const filterdVideos = this.state.relatedVideos.filter(item => {
+      if (item.id.videoId === id) {
+        return true
+      }
+    })
+    this.setState({ history: [...this.state.history, ...filterdVideos] })
+  }
+
   render() {
     return (
       <div className='App'>
@@ -70,6 +89,7 @@ class App extends React.Component {
               name={item.snippet.title}
               getId={this.getId}
               setData={this.setData}
+              playedVideos={this.playedVideos}
             />
           )}
         </div>
@@ -82,9 +102,17 @@ class App extends React.Component {
               id={item.id.videoId}
               relatedVideoId={this.relatedVideoId}
               setData={this.setData}
+              playedVideos={this.playedVideoss}
             />)
           }
         </div>
+        {this.state.history.map((item, i) =>
+          <PreviousPlayedVideos
+            key={i}
+            img={item.snippet.thumbnails.default.url}
+            name={item.snippet.title}
+            id={item.id.videoId} />
+        )}
       </div>
     );
   }
