@@ -27,11 +27,11 @@ const Header = () => {
   <Link to='/Posts'><NavItem >
     Posts
   </NavItem></Link>
-  <Link to='/About'><NavItem >
-    About
-  </NavItem></Link>
   <Link to='/Authors'><NavItem >
     Authors
+  </NavItem></Link>
+  <Link to='/About'><NavItem >
+    About
   </NavItem></Link>
 </Navbar>
     )
