@@ -15,9 +15,9 @@ class Name extends React.Component {
                 </div>
                 <div className="Name__info">
                     <h5>{this.props.name}</h5>
-                    <p>username:{this.props.username}</p>
-                    <p>email:{this.props.email}</p>
-                    <p>phone:{this.props.phone}</p>
+                    <p><b>username:</b> {this.props.username}</p>
+                    <p><b>email:</b> {this.props.email}</p>
+                    <p><b>phone:</b> {this.props.phone}</p>
                 </div>
             </div>
 

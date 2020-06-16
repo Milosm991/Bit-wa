@@ -4,6 +4,7 @@ import AuthorsList from './AuthorsList.js'
 import { Link } from 'react-router-dom'
 import { fetchAuthors } from '../../fetch.js'
 import './Authors.scss'
+import FooterEl from '../../Entities/Footer/FooterEl'
 
 class Authors extends React.Component {
     constructor() {
@@ -31,9 +32,8 @@ class Authors extends React.Component {
                             <AuthorsList key={user.id} name={user.name} />
                         </Link>
                     )}
-
-
                 </div>
+                <FooterEl />
             </div>
         )
     }

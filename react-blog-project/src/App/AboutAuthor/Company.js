@@ -10,8 +10,8 @@ class Company extends React.Component {
         return (
             <div className='Company'>
                 <h5>Company</h5>
-                <p>name: {this.props.nameCompany}</p>
-                <p>slogan: {this.props.slogan}</p>
+                <p><b>name:</b> {this.props.nameCompany}</p>
+                <p><b>slogan:</b> {this.props.slogan}</p>
             </div>
 
         )

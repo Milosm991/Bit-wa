@@ -22,8 +22,8 @@ const Header = () => {
         preventScrolling: true
       }}
     >
-      <Link to='/'>
-        Home
+      <Link to='/createnewpost'>
+        Create New Post
       </Link>
       <Link to='/Posts'>
         Posts

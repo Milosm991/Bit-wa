@@ -7,6 +7,7 @@ import Header from '../../Entities/Header/Header.js'
 import { Link } from 'react-router-dom'
 import { fetchSingleAuthor } from '../../fetch'
 import './SingleAuthor.scss'
+import FooterEl from '../../Entities/Footer/FooterEl'
 
 
 class AuthorItem extends React.Component {
@@ -20,8 +21,8 @@ class AuthorItem extends React.Component {
     componentDidMount() {
         fetchSingleAuthor(`https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`)
             .then(data => {
-
                 this.setState({ singleAuthor: data })
+                
             })
     }
 
@@ -37,12 +38,12 @@ class AuthorItem extends React.Component {
             <Address
                 street={this.state.singleAuthor.address.street}
                 city={this.state.singleAuthor.address.city}
-                zipcode={this.state.singleAuthor.address.zipc}
+                zipcode={this.state.singleAuthor.address.zipcode}
                 lat={this.state.singleAuthor.address.geo.lat}
                 lng={this.state.singleAuthor.address.geo.lng} />
             <Company
                 nameCompany={this.state.singleAuthor.company.name}
-                slogan={this.state.singleAuthor.company.slogan} />
+                slogan={this.state.singleAuthor.company.catchPhrase} />
         </div>
     )
     render() {
@@ -56,6 +57,7 @@ class AuthorItem extends React.Component {
                         </Link><h4 className='SingleAuthor__title'>Single Author</h4>
                         {this.state.singleAuthor && this.renderAuthor()}
                     </div>
+                    <FooterEl />
                 </div>
             )
         } else {

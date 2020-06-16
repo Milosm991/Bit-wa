@@ -4,6 +4,7 @@ import { fetchSinglePost, fetchSingleAuthor, fetchAuthorComments } from '../../f
 import Header from '../../Entities/Header/Header.js';
 import AutorComments from '../AboutAuthor/AutorComments.js'
 import "./SinglePost.scss"
+import FooterEl from '../../Entities/Footer/FooterEl.js';
 
 class SinglePost extends React.Component {
     constructor(props) {
@@ -56,6 +57,7 @@ class SinglePost extends React.Component {
                     />
 
                 )}
+                <FooterEl />
             </div>
         )
     }

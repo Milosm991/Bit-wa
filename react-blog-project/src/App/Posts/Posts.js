@@ -3,6 +3,7 @@ import Header from '../../Entities/Header/Header'
 import Post from './Post.js'
 import { fetchPosts } from '../../fetch.js'
 import './Posts.scss'
+import FooterEl from '../../Entities/Footer/FooterEl'
 
 class Posts extends React.Component {
     constructor() {
@@ -17,7 +18,7 @@ class Posts extends React.Component {
     componentDidMount() {
         fetchPosts('https://jsonplaceholder.typicode.com/posts')
             .then(data => {
-                this.setState({ posts: data.slice(0, 5) })
+                this.setState({ posts: data.slice(0, 10) })
             })
     }
 
@@ -30,6 +31,7 @@ class Posts extends React.Component {
                     <Post posts={this.state.posts}/>
 
                 </div>
+                <FooterEl />
             </div>
 
         )

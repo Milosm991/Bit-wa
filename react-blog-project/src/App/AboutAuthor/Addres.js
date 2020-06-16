@@ -12,9 +12,9 @@ class Address extends React.Component {
 
                 <div className='Address__info'>
                     <h5>Address</h5>
-                    <p>street:{this.props.street}</p>
-                    <p>city:{this.props.city}</p>
-                    <p>zipcode:{this.props.zipcode}</p>
+                    <p><b>street:</b> {this.props.street}</p>
+                    <p><b>city:</b> {this.props.city}</p>
+                    <p><b>zipcode:</b> {this.props.zipcode}</p>
                 </div>
                 <div className='Address__map'>
                     <iframe
