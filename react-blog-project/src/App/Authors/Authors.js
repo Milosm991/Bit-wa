@@ -1,10 +1,13 @@
-import React from 'react' 
+import React from 'react'
 import Header from '../../Entities/Header/Header'
 import AuthorsList from './AuthorsList.js'
+import { Link } from 'react-router-dom'
+import { fetchAuthors } from '../../fetch.js'
+import './Authors.scss'
 
 class Authors extends React.Component {
     constructor() {
-        super ()
+        super()
 
         this.state = {
             users: []
@@ -12,21 +15,24 @@ class Authors extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
+        fetchAuthors('https://jsonplaceholder.typicode.com/users')
             .then(data => {
-                console.log(data);
-                
-                this.setState({ users: data})
+                this.setState({ users: data })
             })
     }
     render() {
-        return(
+        return (
             <div>
                 <Header />
                 <div>
-                    <h2>Authors ({this.state.users.length})</h2>
-                    <AuthorsList users={this.state.users}/>
+                    <h1 className="Authors__title">Authors ({this.state.users.length})</h1>
+                    {this.state.users.map((user, i) =>
+                        <Link to={`/authors/${user.id}`}>
+                            <AuthorsList key={user.id} name={user.name} />
+                        </Link>
+                    )}
+
+
                 </div>
             </div>
         )

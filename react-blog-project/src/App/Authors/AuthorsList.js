@@ -1,15 +1,15 @@
 import React from 'react'
-import AuthorItem from './AuthorItem'
+import './AuthorList.scss'
 
 class AuthorsList extends React.Component {
-    constructor () {
-        super()
+    constructor(props) {
+        super(props)
     }
 
     render() {
         return (
-            <div>
-                {this.props.users.map(user => <AuthorItem user={user} numberOfPosts={2} />)}
+            <div className="AuthorList">
+                <h3 className="AuthorList__name">{this.props.name}</h3>
             </div>
         )
     }
