@@ -1,17 +1,26 @@
-import React from 'react' 
+import React from 'react'
 import Header from '../../Entities/Header/Header'
+import './About.scss'
 
 class About extends React.Component {
     constructor() {
-        super ()
+        super()
     }
 
     render() {
-        return(
+        return (
             <div>
                 <Header />
-                <div>
-                    <h2>About</h2>
+                <div className="About">
+                    <div className='aboutInfo'>
+                        <h2>ABOUT</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure sed explicabo voluptatem. Iusto nobis nesciunt atque tempora aliquam consectetur quos sunt, officia recusandae cum provident minus fuga quas eveniet, labore aut eum! Iste ad odit, provident, placeat minus voluptatum consectetur, sint aliquam animi perferendis assumenda eum iusto dolores exercitationem odio?</p>
+                    </div>
+
+                    <div className='ourStory'>
+                        <h2>OUR STORY</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure sed explicabo voluptatem. Iusto nobis nesciunt atque tempora aliquam consectetur quos sunt, officia recusandae cum provident minus fuga quas eveniet, labore aut eum! Iste ad odit, provident, placeat minus voluptatum consectetur.</p>
+                    </div>
                 </div>
             </div>
         )
