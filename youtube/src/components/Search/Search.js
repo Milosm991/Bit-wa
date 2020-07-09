@@ -3,10 +3,6 @@ import "./Search.scss"
 
 
 class Search extends React.Component {
-    constructor(props) {
-        super(props)
-
-    }
 
     search = (e) => {
         if (e.keyCode !== 13) return;

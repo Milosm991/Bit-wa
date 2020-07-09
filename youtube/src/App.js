@@ -42,7 +42,7 @@ class App extends React.Component {
     }, () => {
       fetchRelatedVideos(this.state.idVideo)
         .then(data => {
-          console.log(data);
+        
 
           this.setState({
             relatedVideos: data.items
@@ -93,7 +93,9 @@ class App extends React.Component {
             />
           )}
         </div>
+        {this.state.relatedVideos.length ? 
         <div className="RelatedVideosMain">
+          <h3>Related Videos</h3>
           {this.state.relatedVideos.map((item, i) =>
             <RelatedVideos
               key={i}
@@ -105,7 +107,10 @@ class App extends React.Component {
               playedVideos={this.playedVideoss}
             />)
           }
-        </div>
+        </div>: null }
+          {this.state.history.length ? 
+        <div>
+          <h3>Previously Played</h3>
         {this.state.history.map((item, i) =>
           <PreviousPlayedVideos
             key={i}
@@ -113,6 +118,7 @@ class App extends React.Component {
             name={item.snippet.title}
             id={item.id.videoId} />
         )}
+        </div>: null}
       </div>
     );
   }
